@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+ 
+   
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring-conf.xml /WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+    <!--
+   <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+ -->
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.agilebees.meme.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/mym/greet</url-pattern>
+  </servlet-mapping>
+  
+   
+  <servlet>
+    <servlet-name>dispatchServlet</servlet-name>
+    <servlet-class>com.agilebees.meme.server.init.AppDispatchServlet</servlet-class>
+  </servlet>
+   <!--
+  <servlet>
+    <servlet-name>dispatchServlet</servlet-name>
+    <servlet-class>com.agilebees.meme.server.init.StandardDispatchServiceServlet</servlet-class>
+  </servlet>
+   -->
+  
+  
+  <servlet-mapping>
+    <servlet-name>dispatchServlet</servlet-name>
+    <url-pattern>/mym/dispatch</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>mym.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

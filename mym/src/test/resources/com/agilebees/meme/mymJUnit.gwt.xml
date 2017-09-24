@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="mym">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.agilebees.meme.mym' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/mym/greet" class="com.agilebees.meme.server.GreetingServiceImpl" />
+
+</module>

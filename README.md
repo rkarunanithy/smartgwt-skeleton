@@ -1,0 +1,1 @@
+SmartGWT Skeleton
